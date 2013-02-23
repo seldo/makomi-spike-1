@@ -14,13 +14,13 @@ a {
 	padding: 3px 10px;
 }
 
-#droptargettest {
+.box {
 	width: 500px;
-	height: 500px;
+	height: 150px;
 	background-color: #eee;
 }
 
-#tool-div {
+#toolbar li {
 	height: 20px;
 	background-color: #bbb;
 }

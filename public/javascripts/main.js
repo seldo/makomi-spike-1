@@ -5,9 +5,14 @@ $(document).ready(function() {
 	window.open(url, windowName, windowSize);	
 	//var draggable = document.getElementById('tool-div');
 	//draggable.addEventListener('dragstart',handleDragStart,false);
-	var dropzone = document.getElementById('droptargettest');
-	dropzone.addEventListener('dragover',handleDragOver,false);
-	dropzone.addEventListener('drop',handleDrop,false);
+	// this is the whole damn document
+	var dropdoc = document;
+	dropdoc.addEventListener('dragover',handleDragOver,false);
+	dropdoc.addEventListener('drop',handleDrop,false);
+	//this is only the target box
+	//var dropbox = document.getElementById('droptargettest');
+	//dropbox.addEventListener('dragover',handleDragOver,false);
+	//dropbox.addEventListener('drop',handleDrop,false);
 });
 /*
 var handleDragStart = function(e) {
@@ -26,6 +31,11 @@ var handleDragOver = function(e) {
 var handleDrop = function(e) {
 	console.log("Dropped");
 	console.log(e);
+	var payload = e.dataTransfer.getData("text/plain");
+	var type = payload.substr(5).toLowerCase();
+	var creation = document.createElement(type);
+	creation.innerHTML = "I'm a " + type;
+	e.target.appendChild(creation);
 };
 var handleDragEnter = function(e) {
 	console.log("Entered");

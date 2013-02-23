@@ -1,9 +1,9 @@
 $(document).ready(function() {
-	var draggable = document.getElementById('tool-div');
-	draggable.addEventListener('dragstart',handleDragStart,false);
+	var tools = document.getElementById('toolbar').getElementsByTagName('li');
+	$.each(tools, function() { addEventListener('dragstart',handleDragStart,false) } );
 });
 var handleDragStart = function(e) {
-	e.dataTransfer.setData('text/html', null);
+	e.dataTransfer.setData("text/plain", e.target.id);
 	console.log("Started");
 	console.log(e);
 }
