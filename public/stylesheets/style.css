@@ -1,0 +1,26 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+
+#toolbar li {
+	display: block;
+	list-style-type: none;
+	margin-left: 0;
+	padding: 3px 10px;
+}
+
+#droptargettest {
+	width: 500px;
+	height: 500px;
+	background-color: #eee;
+}
+
+#tool-div {
+	height: 20px;
+	background-color: #bbb;
+}
